@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Protected Page</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Replace 'your_username' and 'your_password' with the desired credentials
+            if (username === 'your_username' && password === 'your_password') {
+                return true;  // Allow access to the protected content
+            } else {
+                alert("Invalid username or password.");
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

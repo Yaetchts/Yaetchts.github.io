@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Child</title>
+    <style>
+        /* Center align the form content */
+        form {
+            text-align: center;
+        }
+        
+        /* Style the form labels */
+        form label {
+            display: block; /* Display labels as block elements */
+            margin-bottom: 5px; /* Add some vertical spacing */
+            text-align: center; /* Center align the labels */
+        }
+
+
+
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        /* Style the video element to cover the entire container */
+        #video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+        }
+        
+        /* Add some content to display on top of the video */
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+        }
+        body{
+            background-color: grey;
+        }
+        .orange{
+            color:orangered;
+        }
+        
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Replace 'your_username' and 'your_password' with the desired credentials
+            if (username === 'jeanpierrekidima@gmail.com' && password === 'jaden2023') {
+                window.location.href = 'Jaden Trust Fund.html';  // Redirect to xyz.html after successful login
+            } else {
+                alert("Invalid username or password.");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <h1 >Welcome to <span class="grey">Yaetchts</span> <span class="orange">Trust Fund : Child</span></h1>
+    <h2 style="position:absolute;top:100px;left:600px">Please Login </h2>
+    <img src="orange flower.jpg" alt="" height="100" width="100" >
+    
+    <form onsubmit="validateForm(event)">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+<!-- Background Water VIDEO -->
+<video autoplay muted loop id="myVideo">
+    <source src="Background.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+    
+</body>
+</html>
