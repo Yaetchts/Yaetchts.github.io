@@ -60,21 +60,22 @@
         
     </style>
     <script>
-        function validateForm(event) {
-            event.preventDefault(); // Prevent default form submission
+    function validateForm(event) {
+        event.preventDefault(); // Prevent default form submission
 
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
 
-            // Replace 'your_username' and 'your_password' with the desired credentials
-            if (username === 'jeanpierrekidima@gmail.com' && password === 'jaden2023') {
-                window.location.href = 'Jaden Trust Fund.html';  // Redirect to xyz.html after successful login
-            } else {
-                alert("Invalid username or password.");
-            }
+        // Replace 'jeanpierrekidima@gmail.com' and 'jaden2023' with the desired credentials
+        if (username === 'jeanpierrekidima@gmail.com' && password === 'jaden2023') {
+            // Display the "Your account has been deactivated" pop-up
+            alert("Your account has been deactivated");
+        } else {
+            alert("Invalid username or password.");
         }
-        
-    </script>
+    }
+</script>
+
 </head>
 <body>
     <h1 >Welcome to <span class="grey">Yaetchts</span> <span class="blue">Trust Fund: Baby</span></h1>
