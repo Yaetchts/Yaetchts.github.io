@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #savings-section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        #scoreboard {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #settings-form {
+            margin-top: 20px;
+        }
+        body{
+            background-image: url('https://th.bing.com/th/id/OIP.VzPfhq0Onzc9v59tjaboiwHaEo?rs=1&pid=ImgDetMain');
+            background-repeat:no-repeat;
+            color:white;
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Samuel:Total Months:600months</h1>
+    <div id="savings-section">
+        <h2 style="position:absolute;top:10px;left:500px;">Personal  Account</h2>
+        <h3>Welcome to Bank of Rose Roses</h3>
+        <p style="position:absolute;top:70px;left:500px;">You dont need money in order to start saving</p>
+
+        <div id="scoreboard">R: 0</div>
+        <form id="settings-form">
+            <label for="monthly-savings">Setting: How much are you willing to spare every month?</label>
+            <input type="number" id="monthly-savings" min="0" step="1" placeholder="Enter amount" required>
+            <button type="button" onclick="saveSettings()">Save Settings</button>
+        </form>
+    </div>
+
+    <script>
+        let monthlySavings = 0;
+        let monthsPassed = 0;
+
+        // Load previous score from localStorage on page load
+        window.onload = function () {
+            const savedScore = localStorage.getItem('score');
+            if (savedScore !== null) {
+                monthlySavings = parseInt(savedScore);
+                updateScoreboard();
+            }
+        };
+
+        function saveSettings() {
+            const monthlySavingsInput = document.getElementById('monthly-savings');
+            monthlySavings = parseInt(monthlySavingsInput.value) || 0;
+
+            // Save the score to localStorage
+            localStorage.setItem('score', monthlySavings);
+
+            updateScoreboard();
+        }
+
+        function updateScoreboard() {
+            const scoreboard = document.getElementById('scoreboard');
+
+            // Increment the scoreboard based on the monthly savings
+            const totalSavings = monthlySavings * (monthsPassed + 1);
+            scoreboard.textContent = 'R: ' + totalSavings;
+
+            // Increment the months passed
+            monthsPassed++;
+        }
+    </script>
+
+    <hr><br><br><br><br>
+    <p>How it works:</p>
+
+    <p>People think that in order to save they need to have money <Br>but that is a bad way to go about saving <br>with yaetchts personal account <br>you save before having money and when you have the cash you <br>pay the amount "already" saved<br>Almost like paying your debt or fulfilling on your committement</p>
+</body>
+</html>
